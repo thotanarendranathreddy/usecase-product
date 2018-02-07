@@ -1,0 +1,165 @@
+<link href="../assets/css/custome.css" rel="stylesheet" />
+  {{#if error}}
+  <h4 class="alert alert-danger" id="prvsuccess" style="text-align:center;"role="alert">{{error}}</h4>
+  {{/if}}
+  {{#if success}}
+  <div class="alert alert-success" id="success" role="alert">{{success}}</div>
+  {{/if}}
+      <div class="container">
+      <center>
+        <img src="./logo.png">
+        <h1 style="color:red;"><b>TruthChain</b></h1>
+      </center>
+<form method="POST" action="/register">
+          <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+                {{#if errors}}
+                <div class="search_categories">
+                  <div class="select">
+                    <select rel="tooltip" title="Block Based Authorization" name="role" id="search_categories">
+                      <option value="" disabled="disabled" selected="selected">Role of Identity</option>
+                      <option value="reader">Reader</option>
+                      <option value="writer">Writer</option>
+                      <option value="reviewer">Reviewer</option>
+                    </select>
+                  </div>
+                </div>
+                <p style="color:red;" id="success">{{errors}}</p>
+      						 {{else}}
+                   <div class="search_categories">
+                     <div class="select">
+                       <select rel="tooltip" title="Block Based Authorization" name="role" id="search_categories">
+                         <option value="" disabled="disabled" selected="selected">Role of Identity</option>
+                         <option value="reader">Reader</option>
+                         <option value="writer">Writer</option>
+                         <option value="reviewer">Reviewer</option>
+                       </select>
+                     </div>
+                   </div>
+      					{{/if}}
+                <br>
+                {{#if errors}}
+      					<div class="form-group has-error has-feedback">
+      						 <div class="form-group form-group-lg">
+      							 <input rel="tooltip" title="narendranathreddy@gmail.com" type="email"
+      								class="form-control" name="email"
+      								placeholder="Email">
+                      <p style="color:red;" id="errors">{{errors}}</p>
+      						 </div>
+      					 </div>
+      						 {{else}}
+      						 <div class="form-group form-group-lg">
+      	              <input rel="tooltip" title="narendranathreddy@gmail.com" type="email"
+      	               class="form-control" name="email"
+      	               placeholder="Email">
+      	           </div>
+      					{{/if}}
+                <br>
+                {{#if errors}}
+      					<div class="form-group has-error has-feedback">
+      						 <div class="form-group form-group-lg">
+      							 <input rel="tooltip" title="********" type="password"
+      								class="form-control" name="password"
+      								placeholder="Password">
+                      <p style="color:red;" id="err">{{errors}}</p>
+      						 </div>
+      					 </div>
+      						 {{else}}
+      						 <div class="form-group form-group-lg">
+      	              <input rel="tooltip" title="********" type="password"
+      	               class="form-control" name="password"
+      	               placeholder="Password">
+      	           </div>
+      					{{/if}}
+                <br>
+                {{#if errors}}
+      					<div class="form-group has-error has-feedback">
+      						 <div class="form-group form-group-lg">
+      							 <input rel="tooltip" title="Aadhar No or Govt ID or Full Qualified Name" type="text"
+      								class="form-control" name="fullIdentity"
+      								placeholder="FullIdentity">
+                      <p style="color:red;" id="prverror">{{errors}}</p>
+      						 </div>
+      					 </div>
+      						 {{else}}
+      						 <div class="form-group form-group-lg">
+      	              <input rel="tooltip" title="Aadhar No or Govt ID or Full Qualified Name" type="text"
+      	               class="form-control" name="fullIdentity"
+      	               placeholder="FullIdentity">
+      	           </div>
+      					{{/if}}
+                <br>
+          </div>
+          <div class="col-md-3">
+            {{#if errors}}
+            <div class="form-group has-error has-feedback">
+               <div class="form-group form-group-lg">
+                 <input rel="tooltip" title="Please Provide Secret Code to Register Account in TruthChain" type="password"
+                  class="form-control" name="secretcode"
+                  placeholder="Secret Code ">
+                  <p style="color:red;" id="codeerr">{{errors}}</p>
+               </div>
+             </div>
+               {{else}}
+               <div class="form-group form-group-lg">
+                  <input rel="tooltip" title="Please Provide Secret Code to Register Account in TruthChain" type="password"
+                   class="form-control" name="secretcode"
+                   placeholder="Secret Code">
+               </div>
+            {{/if}}
+          </div>
+        </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <button type="submit"  rel="tooltip" title="BlockChain Based Authentication" class="btn btn-danger btn-lg btn-block">SignUp</button>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                      <li>
+                          <a href="/dashboard">
+                              Dashboard
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/reader">
+                              Reader Section
+                          </a>
+                      </li>
+                        <li>
+                            <a href="/writer">
+                                Writer SEction
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/reviewer">
+                                Reviewer SEction
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/verify">
+                                Verify Article
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/logout">logout
+                                <i class="material-icons">lock</i>
+                                <p class="hidden-lg hidden-md">lock</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="/">TruthChain</a>,News For The People,By The People
+                </p>
+            </div>
+        </footer>
+  </div>

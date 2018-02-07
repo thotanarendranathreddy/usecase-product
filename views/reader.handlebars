@@ -1,0 +1,213 @@
+<link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+<link href="../assets/css/custome.css" rel="stylesheet" />
+    <div class="wrapper">
+        <div class="sidebar" data-color="red" data-image="../assets/img/sidebar-1.jpg">
+          <div class="logo">
+              <a href="/reader" class="simple-text">
+                <img src="./newlogo.png">
+                <h3 style="color:red;"><b>TruthChain</b></h3>
+              </a>
+          </div>
+            <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li>
+                      <a href="/dashboard">
+                          <i class="material-icons">dashboard</i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                  <li class="active">
+                      <a href="/reader">
+                          <i class="material-icons">content_paste</i>
+                          <p>Reader Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/writer">
+                          <i class="material-icons">border_color</i>
+                          <p>Writer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reviewer">
+                          <i class="material-icons">rate_review</i>
+                          <p>Reviewer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/verify">
+                          <i class="material-icons">content_paste</i>
+                          <p>Verify Product</p>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+          <nav class="navbar navbar-transparent navbar-absolute">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/user">   <p class="category" style="color:red;"><b>Genuine Information  For the People By the People</b></p></a>
+                  </div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li>
+                              <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="material-icons">dashboard</i>
+                                  <p class="hidden-lg hidden-md">Dashboard</p>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/logout">
+                                  Logout<i class="material-icons">lock</i>
+                                  <p class="hidden-lg hidden-md">lock</p>
+                              </a>
+                          </li>
+                      </ul>
+                      <form method="POST" action="/articles/search" class="navbar-form navbar-right" role="search">
+                        <div class="form-group  is-empty">
+                          <input type="text" class="form-control" name="searchValue" placeholder="Type Writer Name">
+                          <span class="material-input"></span>
+                      </div>
+                        <div class="form-group  is-empty">
+                        <div class="select">
+                        <select  name="search_categories" id="search_categories">
+                        <option id="search_categories" value="" disabled="disabled" selected="selected">Search By</option>
+                        <option id="search_categories" value="title">Title</option>
+                        <option id="search_categories" value="price">Price</option>
+                        <option id="search_categories" value="company">Company</option>
+                        <option id="search_categories" value="type">Type</option>
+                      </select>
+                      </div>
+                    </div>
+                      <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                          <i class="material-icons">search</i>
+                          <div class="ripple-container"></div>
+                      </button>
+                  </form>
+                  </div>
+              </div>
+          </nav>
+            <div class="content">
+                <div class="container-fluid" {{# each products }}>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <h4 rel="tooltip" title="For Better Search we use Mongodb Please cross verify selected Article with blockchain. At verify Articel Section" class="title"><b>Article-Title</b><br>{{this.title}}</h4>
+                                </div>
+                                <div class="card-content">
+                                  <div class="row">
+                                      <div class="col-md-4"></div>
+                                      <div class="col-md-6">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;">Address on Blockchain</h4>
+                                              <h4 rel="tooltip" title="Article contract Address on Blockchain">{{ this.contractAddress }}</h4>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-2"></div>
+                                    </div>
+                                    <hr style="color:orange;">
+                                      <div class="row">
+                                      <div class="col-md-2">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;"><i class="material-icons">person</i></h4>
+                                                <h4 rel="tooltip" title="Company Details">{{ this.company }}</h4>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-2">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;"><i class="material-icons">hourglass_empty</i></h4>
+                                                <h4 rel="tooltip" title="Status of the Product">{{ this.status }}</h4>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-2">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <h4 rel="tooltip" title="Type of Product">{{ this.type }}</h4>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-2">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <h4 rel="tooltip" title="Price details">{{ this.price }}</h4>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-2">
+                                          <div class="form-group label-floating">
+                                              <h4  class="control-label" style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <h4 rel="tooltip" title="license No">{{ this.license }}</h4>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <hr>
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div class="form-group">
+                                              <h4 style="color:red;"><i class="material-icons">comment</i></h4>
+                                              <div rel="tooltip" title="Comment" class="form-group label-floating">
+                                                  <h4>{{{ this.comment }}}</h4>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div {{/each}}>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                          <li>
+                              <a href="/dashboard">
+                                  Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/reader">
+                                  Reader Section
+                              </a>
+                          </li>
+                            <li>
+                                <a href="/writer">
+                                    Writer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/reviewer">
+                                    Reviewer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/verify">
+                                    Verify Article
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">TruthChain</a>, News For The People, By The People
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>

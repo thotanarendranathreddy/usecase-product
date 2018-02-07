@@ -1,0 +1,73 @@
+<style>
+.margin-top-1 {
+	margin-top: 1em;
+}
+#particles-js {
+	background-color: #e88312;
+  position:fixed;
+	background-image: url('../truth.gif');
+	background-size: cover;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+	z-index:0;
+}
+#overlay {
+  position: relative;
+}
+</style>
+	<div id="particles-js"></div>
+  <div id="overlay">
+		{{#if success_msg}}
+				<strong><h4 class="alert alert-success" id="success">{{success_msg}}</h4></strong>
+		{{/if}}
+
+		{{#if error_msg}}
+				<strong><h4 class="alert alert-danger" id="errors">{{error_msg}}</h4></strong>
+		{{/if}}
+
+		{{#if error}}
+			 <h4 class="alert alert-danger" id="err" style="text-align:center;"><strong>{{error}}</strong></h4>
+
+		{{/if}}
+
+<div class="container">
+  <br><br><br>
+<center>
+  <img src="./logo.png">
+  <h1 style="color:red;"><b>TruthChain</b></h1>
+</center>
+    <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form method="POST" action="/login">
+          <hr>
+          <div class="form-group form-group-lg">
+             <input rel="tooltip" title="narendranathreddy@gmail.com" type="email"
+              class="form-control" name="username"
+              placeholder="Email" #id>
+          </div>
+          <br>
+          <div class="form-group form-group-lg">
+              <input rel="tooltip" title="*********" type="password"
+              class="form-control" name="password"
+              placeholder="Password">
+          </div>
+          <br>
+          <button type="submit" rel="tooltip" title="Blockchain Based Authentication" class="btn btn-danger btn-lg btn-block">
+                              <i class="material-icons">lock_open</i></button>
+        </form>
+        <hr>
+        <br>
+        <a href="/register"><button  class="btn btn-primary btn-lg btn-block">Sign Up</button></a>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+
+  </div>
+
+	<script src="./particles.js"></script>
+	<script src="./particlesjsn.js"></script>

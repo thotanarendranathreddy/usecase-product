@@ -1,0 +1,260 @@
+<!--  Material Dashboard CSS    -->
+<link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <div class="wrapper">
+        <div class="sidebar" data-color="orange" data-image="../assets/img/sidebar-3.jpg">
+          <div class="logo">
+              <a href="/reader" class="simple-text">
+                <img src="./newlogo.png">
+                <h3 style="color:red;"><b>TruthChain</b></h3>
+              </a>
+          </div>
+            <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li>
+                      <a href="/dashboard">
+                          <i class="material-icons">dashboard</i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reader">
+                          <i class="material-icons">content_paste</i>
+                          <p>Reader Area</p>
+                      </a>
+                  </li>
+                  <li class="active">
+                      <a href="/writer">
+                          <i class="material-icons">border_color</i>
+                          <p>Writer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reviewer">
+                          <i class="material-icons">rate_review</i>
+                          <p>Reviewer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/verify">
+                          <i class="material-icons">content_paste</i>
+                          <p>Verify Product</p>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/user"> <p class="category" style="color:red;"><b>Genuine Information  For the People By the People</b></p> </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Product Creation</h4>
+                                    <p class="category">Only Writer has Privilage to write Products.</p>
+                                </div>
+                                <div class="card-content">
+                                    <form method="POST" action="/product">
+                                      <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Title</label>
+                                                <input type="text" name="title" class="form-control">
+                                            </div>
+                                          </div>
+                                      </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Company</label>
+                                                    <input type="text" name="company" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Status</label>
+                                                    <input type="text" name="status" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Type</label>
+                                                    <input type="text" name="type" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Price</label>
+                                                    <input type="text" name="price" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">LicenseNo</label>
+                                                    <input type="text" name="license" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">BatchNo</label>
+                                                    <input type="text" name="batch" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                              <label>Full Product description</label>
+                                                    <div class="form-group label-floating">
+                                                        <textarea id="editor" class="form-control" name="comment" rows="10"></textarea>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary pull-right">Create</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="#pablo">
+                                        <img class="img" src="../assets/img/faces/narendranath.jpg" />
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h6 class="category text-gray">Founder</h6>
+                                    <h4 class="card-title" style="color:red">TruthChain <br>(Blockchain FullStack Developer)</h4>
+                                    <p class="card-content">
+                                      Aims to eliminate fake information in the digital world.<br>We propose a network in which writers produce news content that is reviewed by fact-checkers before being published on the network without the risk of being taken down.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                              {{#if errors}}
+                                <div id="prverror" style="text-align:center; color:red">
+                                  <i class="material-icons">error_outline</i>
+                                  <h4 class="alert alert-danger" id="prverror" role="alert" >{{errors}}</h4>
+                                </div>
+                              {{/if}}
+                              {{#if ok}}
+                                <div id="prvsuccess" style="text-align:center; color:green">
+                                  <i class="material-icons">check_circle</i>
+                                  <h4 class="alert alert-success" id="prvsuccess" role="alert" >{{ok}}</h4>
+                                </div>
+                              {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                          <li>
+                              <a href="/dashboard">
+                                  Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/reader">
+                                  Reader Section
+                              </a>
+                          </li>
+                            <li>
+                                <a href="/writer">
+                                    Writer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/reviewer">
+                                    Reviewer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/verify">
+                                    Verify Product
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">TruthChain</a>, Genuine Information  For The People, By The People
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <style>
+    blockQuote, q {
+      border-left:  solid orange;
+      background: rgb(250, 247, 247) no-repeat;
+      text-shadow: 1px 1px #fff;
+      margin: 5px 0;
+    }
+    </style>
+    <style>
+          .ck-editor__editable {
+              min-height: 200px;
+          }
+    </style>
+    <!--  Edit Plugin -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+    <script>
+    ClassicEditor
+.create( document.querySelector( '#editor' ), {
+  toolbar: [ 'headings', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+  heading: {
+      options: [
+          { modelElement: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+          { modelElement: 'heading3', viewElement: 'h3', title: 'Heading 3', class: 'ck-heading_heading1' },
+          { modelElement: 'heading5', viewElement: 'h5', title: 'Heading 5', class: 'ck-heading_heading2' }
+      ]
+  }
+} )
+.catch( error => {
+  console.log( error );
+} );
+    </script>

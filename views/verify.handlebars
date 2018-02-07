@@ -1,0 +1,253 @@
+<!--  Material Dashboard CSS    -->
+<link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+<link href="../assets/css/custome.css" rel="stylesheet" />
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-3.jpg">
+          <div class="logo">
+              <a href="/reader" class="simple-text">
+                <img src="./newlogo.png">
+                <h3 style="color:red;"><b>TruthChain</b></h3>
+              </a>
+          </div>
+            <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li>
+                      <a href="/dashboard">
+                          <i class="material-icons">dashboard</i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reader">
+                          <i class="material-icons">content_paste</i>
+                          <p>Reader Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/writer">
+                          <i class="material-icons">border_color</i>
+                          <p>Writer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reviewer">
+                          <i class="material-icons">rate_review</i>
+                          <p>Reviewer Area</p>
+                      </a>
+                  </li>
+                  <li class="active">
+                      <a href="/verify">
+                          <i class="material-icons">content_paste</i>
+                          <p>Verify Product</p>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/user"> <p class="category" style="color:red;"><b>Genuine Information  For the People By the People</b></p> </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6">
+                        {{#if errors}}
+                          <div id="prverror" style="text-align:center; color:red">
+                            <i class="material-icons">error_outline</i>
+                            <h4 class="alert alert-danger" id="prverror" role="alert" >{{errors}}</h4>
+                          </div>
+                        {{/if}}
+                        {{#if ok}}
+                          <div id="prverror" style="text-align:center; color:green">
+                            <i class="material-icons">check_circle</i>
+                            <h4 class="alert alert-success" id="prvsuccess" role="alert" >{{ok}}</h4>
+                          </div>
+                        {{/if}}
+                      </div><div class="col-md-3"></div>
+                        <div class="col-md-12">
+                              <div class="card">
+                                  <div class="card-header" data-background-color="blue">
+                                      <h3 class="title">Cross Verify Genune Products from Blockchain</h3>
+                                      <h4 class="category"><b>For Better Search "Reader section" linked with Mongodb</b></h4>
+                                  </div>
+                                  <div class="card-content">
+                                    <form method="POST" action="/verify">
+                                    <div class="row">
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <div class="form-group form-group-lg">
+                                                   <input rel="tooltip" title="Product address" type="text"
+                                                    class="form-control" name="contractAddress"
+                                                    placeholder="copy Product contract address from Reader Area and paste here">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                          <button type="submit" class="btn btn-primary pull-right">Verify</button>
+                                          <div class="clearfix"></div>
+                                        </div>
+                                      </div>
+                                      </form>
+                                      <hr style="color:orange;">
+                                      <div class="row">
+                                      <div class="col-md-12">
+                                        <div class="form-group label-floating">
+                                            <h4 class="control-label" style="color:red;"><i class="material-icons">subtitles</i></h4>
+                                            <ul>
+                                            {{#each products}}
+                                              <h4 rel="tooltip" title="title">{{ this.title }}</h4>
+                                            {{/each}}
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                      <hr style="color:orange;">
+                                        <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <h4 class="control-label"  style="color:red;"><i class="material-icons">person</i></h4>
+                                                <ul>
+                                                {{#each products}}
+                                                  <h4 rel="tooltip" title="Company">{{ this.company }}</h4>
+                                                {{/each}}
+                                              </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <h4 class="control-label"  style="color:red;"><i class="material-icons">hourglass_empty</i></h4>
+                                                <ul>
+                                                {{#each products}}
+                                                  <h4 rel="tooltip" title="Status">{{ this.status }}</h4>
+                                                {{/each}}
+                                              </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <h4 class="control-label"  style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <ul>
+                                                {{#each products}}
+                                                  <h4 rel="tooltip" title="Price">{{ this.price }}</h4>
+                                                {{/each}}
+                                              </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <h4 class="control-label"  style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <ul>
+                                                {{#each products}}
+                                                  <h4 rel="tooltip" title="Type">{{ this.type }}</h4>
+                                                {{/each}}
+                                              </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group label-floating">
+                                                <h4 class="control-label"  style="color:red;"><i class="material-icons">open_in_browser</i></h4>
+                                                <ul>
+                                                {{#each products}}
+                                                  <h4 rel="tooltip" title="License">{{ this.license }}</h4>
+                                                {{/each}}
+                                              </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="color:orange;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h4  style="color:red;"><i class="material-icons">comment</i></h4>
+                                                <div class="form-group label-floating">
+                                                  <ul>
+                                                  {{#each products}}
+                                                    <h4 rel="tooltip" title="comment">{{ this.comment }}</h4>
+                                                  {{/each}}
+                                                </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                          <li>
+                              <a href="/dashboard">
+                                  Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/reader">
+                                  Reader Section
+                              </a>
+                          </li>
+                            <li>
+                                <a href="/writer">
+                                    Writer Section
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/reviewer">
+                                    Reviewer Section
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/verify">
+                                    Verify Product
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">TruthChain</a>, News For The People, By The People
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>

@@ -1,0 +1,278 @@
+<link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+            <div class="logo">
+                <a href="/reader" class="simple-text">
+                  <img src="./newlogo.png">
+                  <h3 style="color:red;"><b>TruthChain</b></h3>
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li class="active">
+                      <a href="/dashboard">
+                          <i class="material-icons">dashboard</i>
+                          <p>Dashboard</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reader">
+                          <i class="material-icons">content_paste</i>
+                          <p>Reader Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/writer">
+                          <i class="material-icons">border_color</i>
+                          <p>Writer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/reviewer">
+                          <i class="material-icons">rate_review</i>
+                          <p>Reviewer Area</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/verify">
+                          <i class="material-icons">content_paste</i>
+                          <p>Verify Product</p>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+          <nav class="navbar navbar-transparent navbar-absolute">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/user"> <p class="category" style="color:red;"><b>Genuine Product Information  For the People By the People</b></p> </a>
+                  </div>
+                  <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
+                          <li>
+                              <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="material-icons">dashboard</i>
+                                  <p class="hidden-lg hidden-md">Dashboard</p>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/logout">logout
+                                  <i class="material-icons">lock</i>
+                                  <p class="hidden-lg hidden-md">lock</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="orange">
+                                    <i class="material-icons">perm_identity</i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Registred Users</h3>
+                                    <h3 class="title">
+                                      {{#each result}}
+                                <h2 style="color:red;">{{ this.register }}</h2>
+                                      {{/each}}
+                                    <small>So far Registred</small>
+                                    </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                    <i class="material-icons">assignment_ind</i>
+                                        <a href="/register">Register new Identity</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="green">
+                                    <i class="material-icons">check_circle</i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Online Users</h3>
+                                    <h3 class="title">
+                                      {{#each result}}
+                                <h2 style="color:red;">{{ this.sessions }}</h2>
+                                      {{/each}}
+                                    <small>Present Online users</small>
+                                    </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                    <i class="material-icons">assignment_ind</i>
+                                        <a href="/register">Register new Identity</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="red">
+                                    <i class="material-icons">chrome_reader_mode</i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Products Count</h3>
+                                    <h3 class="title">
+                                      {{#each result}}
+                                <h2 style="color:red;">{{ this.article }}</h2>
+                                      {{/each}}
+                                    <small>Present Products count</small>
+                                    </h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                    <i class="material-icons">assignment_ind</i>
+                                        <a href="/register">Register new Identity</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="blue">
+                                    <i class="material-icons">group_work</i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Total Roles</h3>
+                                    <h3 style="color:red;" class="title">Reader (1)<br>Writer (2)<br>Reviewer (3)</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">update</i> Just Updated
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-12"></div>
+                        <div class="col-lg-5 col-md-12">
+                            <div class="card card-nav-tabs">
+                                <div class="card-header" data-background-color="blue">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Blockchain:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="active">
+                                                    <a href="/dashboard" data-toggle="tab">
+                                                        <i class="material-icons">touch_app</i>Blockchain
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="active">
+                                                    <a href="/dashboard" data-toggle="tab">
+                                                        <i class="material-icons">code</i>Solidity
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" >
+                                          <center><img src="./blockchain.png" style="height: 300px; width: auto; "></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-12">
+                            <div class="card card-nav-tabs">
+                                <div class="card-header" data-background-color="blue">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Truthchain:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="active">
+                                                    <a href="/dashboard" data-toggle="tab">
+                                                        <i class="material-icons">touch_app</i>Blockchain
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="active">
+                                                    <a href="/dashboard" data-toggle="tab">
+                                                        <i class="material-icons">code</i>Solidity
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" >
+                                          <center><img src="./logo.png" style="height: 300px; width: auto;"></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          <div class="col-lg-1 col-md-12"></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                          <li>
+                              <a href="/dashboard">
+                                  Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/reader">
+                                  Reader Section
+                              </a>
+                          </li>
+                            <li>
+                                <a href="/writer">
+                                    Writer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/reviewer">
+                                    Reviewer SEction
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/verify">
+                                    Verify article
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">logout
+                                    <i class="material-icons">lock</i>
+                                    <p class="hidden-lg hidden-md">lock</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="/">TruthChain</a>, News For The People, By The People
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
